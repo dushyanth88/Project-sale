@@ -6,13 +6,13 @@ import {
   CheckCircle2,
   Send,
   X,
-  Phone,
   Layout,
   Cpu,
   Globe
 } from 'lucide-react';
 // EmailJS is replaced by Web3Forms per user request
 import { projects } from './data/projects';
+import logo from './assets/logo.jpeg';
 import './App.css';
 
 const WEB3FORMS_ACCESS_KEY = "932c422d-8d3f-42d8-bbcc-7197f869c4de"; // Update this with your key
@@ -88,7 +88,7 @@ const App = () => {
       <nav className="navbar glass">
         <div className="container nav-content">
           <div className="logo">
-            <Rocket className="logo-icon" />
+            <img src={logo} alt="Akvora Logo" className="logo-image" />
             <span>Akvora</span>
           </div>
           <div className="nav-links">
@@ -286,37 +286,30 @@ const App = () => {
         )}
       </AnimatePresence>
 
-      {/* Floating Buttons */}
-      <div className="floating-actions">
-        <a href="tel:+1234567890" className="fab fab-phone" title="Call Us">
-          <Phone size={24} />
-        </a>
-      </div>
 
       {/* Footer */}
       <footer className="footer">
         <div className="container footer-content">
           <div className="footer-info">
             <div className="logo">
-              <Rocket className="logo-icon" />
-              <span>ProjectLaunch</span>
+              <img src={logo} alt="Akvora Logo" className="logo-image" />
+              <span>Akvora</span>
             </div>
             <p>Providing high-quality software solutions for modern businesses.</p>
           </div>
           <div className="footer-links">
             <h4>Quick Links</h4>
             <a href="#projects">Projects</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Privacy Policy</a>
+
           </div>
           <div className="footer-contact">
             <h4>Contact</h4>
-            <p>support@projectlaunch.com</p>
-            <p>+1 (234) 567-890</p>
+            <p>contactakvora@gmail.com</p>
+
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} ProjectLaunch. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Akvora. All rights reserved.</p>
         </div>
       </footer>
     </div>
