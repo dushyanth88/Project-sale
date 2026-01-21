@@ -8,7 +8,12 @@ import {
   X,
   Layout,
   Cpu,
-  Globe
+  Globe,
+  Search,
+  MessageSquare,
+  Settings,
+  ShieldCheck,
+  Zap
 } from 'lucide-react';
 // EmailJS is replaced by Web3Forms per user request
 import { projects } from './data/projects';
@@ -130,6 +135,39 @@ const App = () => {
         <div className="hero-bg-accent"></div>
       </header>
 
+      {/* How It Works Section */}
+      <section className="how-it-works">
+        <div className="container">
+          <div className="section-header">
+            <h2>How It Works</h2>
+            <p>Get your project up and running in 4 simple steps</p>
+            <div className="divider"></div>
+          </div>
+          <div className="steps-grid">
+            <motion.div className="step-card" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <div className="step-icon"><Search size={32} /></div>
+              <h3>1. Browse Projects</h3>
+              <p>Explore our catalog of professional, ready-to-use software solutions.</p>
+            </motion.div>
+            <motion.div className="step-card" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+              <div className="step-icon"><Layout size={32} /></div>
+              <h3>2. Select & Enquire</h3>
+              <p>Choose the project that fits your needs and fill out the enquiry form.</p>
+            </motion.div>
+            <motion.div className="step-card" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
+              <div className="step-icon"><MessageSquare size={32} /></div>
+              <h3>3. Consultation</h3>
+              <p>Our team will reach out to discuss customization and deployment details.</p>
+            </motion.div>
+            <motion.div className="step-card" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}>
+              <div className="step-icon"><Rocket size={32} /></div>
+              <h3>4. Get Started</h3>
+              <p>Receive your professional project and launch your business immediately.</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Projects Grid */}
       <section id="projects" className="projects-section">
         <div className="container">
@@ -181,6 +219,56 @@ const App = () => {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="benefits-section">
+        <div className="container">
+          <div className="benefits-grid">
+            <div className="benefits-content">
+              <div className="section-header" style={{ textAlign: 'left', marginBottom: '3rem' }}>
+                <h2 style={{ textAlign: 'left' }}>Why Choose Akvora Solutions?</h2>
+                <div className="divider" style={{ margin: '0' }}></div>
+              </div>
+
+              <div className="benefit-item">
+                <div className="step-icon" style={{ margin: '0', flexShrink: 0 }}><Zap size={24} /></div>
+                <div className="benefit-content">
+                  <h3>Ready for Deployment</h3>
+                  <p>Our projects are built for production. Skip the months of development and go live in days.</p>
+                </div>
+              </div>
+
+              <div className="benefit-item">
+                <div className="step-icon" style={{ margin: '0', flexShrink: 0 }}><ShieldCheck size={24} /></div>
+                <div className="benefit-content">
+                  <h3>Professional Quality</h3>
+                  <p>Coded with industry best practices, ensuring high performance, security, and scalability.</p>
+                </div>
+              </div>
+
+              <div className="benefit-item">
+                <div className="step-icon" style={{ margin: '0', flexShrink: 0 }}><Settings size={24} /></div>
+                <div className="benefit-content">
+                  <h3>Full Support</h3>
+                  <p>We provide complete documentation and support to help you manage and scale your project.</p>
+                </div>
+              </div>
+            </div>
+
+            <motion.div
+              className="benefits-visual glass"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              style={{ padding: '3rem', borderRadius: '32px', textAlign: 'center' }}
+            >
+              <Cpu size={120} className="logo-icon" style={{ marginBottom: '2rem', opacity: 0.5 }} />
+              <h3 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Modern Tech Stack</h3>
+              <p style={{ color: 'var(--text-muted)' }}>We use the latest technologies like React, Node.js, and AI models to ensure your business stays ahead of the curve.</p>
+            </motion.div>
           </div>
         </div>
       </section>
