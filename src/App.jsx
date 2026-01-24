@@ -13,7 +13,8 @@ import {
   MessageSquare,
   Settings,
   ShieldCheck,
-  Zap
+  Zap,
+  Menu
 } from 'lucide-react';
 // EmailJS is replaced by Web3Forms per user request
 import { projects } from './data/projects';
@@ -26,6 +27,7 @@ const App = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formStatus, setFormStatus] = useState(''); // '', 'sending', 'success', 'error'
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -96,12 +98,44 @@ const App = () => {
             <img src={logo} alt="Akvora Logo" className="logo-image" />
             <span>Akvora</span>
           </div>
-          <div className="nav-links">
+          <div className="nav-links desktop-only">
             <a href="#projects">Browse Projects</a>
             <button className="btn btn-primary" onClick={() => window.scrollTo({ top: 800, behavior: 'smooth' })}>
               Get Started
             </button>
           </div>
+
+          <button
+            className="mobile-menu-toggle"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle Menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
+          <AnimatePresence>
+            {isMobileMenuOpen && (
+              <motion.div
+                className="mobile-menu"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+              >
+                <div className="mobile-nav-links">
+                  <a href="#projects" onClick={() => setIsMobileMenuOpen(false)}>Browse Projects</a>
+                  <button
+                    className="btn btn-primary"
+                    onClick={() => {
+                      window.scrollTo({ top: 800, behavior: 'smooth' });
+                      setIsMobileMenuOpen(false);
+                    }}
+                  >
+                    Get Started
+                  </button>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </nav>
 
