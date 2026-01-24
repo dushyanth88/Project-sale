@@ -350,14 +350,28 @@
 
 .modal-close {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  background: none;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
   color: var(--text-muted);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
 }
 
 .modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
   color: #fff;
+  transform: rotate(90deg);
+}
+
+.modal-content h2 {
+  padding-right: 3rem;
 }
 
 .selection-form {
@@ -548,10 +562,24 @@
 
   .modal-content h2 {
     font-size: 1.5rem;
+    padding-right: 2.5rem;
   }
 
   .section-header h2 {
     font-size: 2rem;
+  }
+
+  .form-group {
+    margin-bottom: 0.75rem;
+  }
+
+  .form-group label {
+    margin-bottom: 0.2rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.5rem 0.75rem;
   }
 
   .steps-grid {
