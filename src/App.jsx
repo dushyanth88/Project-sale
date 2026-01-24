@@ -21,7 +21,7 @@ import { projects } from './data/projects';
 import logo from './assets/logo.jpeg';
 import './App.css';
 
-const WEB3FORMS_ACCESS_KEY = "932c422d-8d3f-42d8-bbcc-7197f869c4de"; // Update this with your key
+const WEB3FORMS_ACCESS_KEY = "f7eab595-5483-4cef-acb6-01918b9251fe"; // Update this with your key
 
 const App = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -354,7 +354,7 @@ const App = () => {
                         type="text"
                         name="name"
                         required
-                        placeholder="e.g. John Doe"
+                        placeholder="e.g. ABC"
                         value={formData.name}
                         onChange={handleChange}
                       />
@@ -365,7 +365,7 @@ const App = () => {
                         type="email"
                         name="email"
                         required
-                        placeholder="e.g. john@example.com"
+                        placeholder="e.g. abc@gmail.com"
                         value={formData.email}
                         onChange={handleChange}
                       />
@@ -375,7 +375,7 @@ const App = () => {
                       <input
                         type="tel"
                         name="phone"
-                        placeholder="e.g. +1 234 567 890"
+                        placeholder="e.g. +91 9876543210"
                         value={formData.phone}
                         onChange={handleChange}
                       />
